@@ -16,6 +16,10 @@ $("#menu a").each(function() {
   $option.text(text);
   //option's value is the href
   $option.val(href);
+  //Deal with selected options depending on current page.
+  if ($(this).parent().hasClass("selected")) {
+    $option.prop("selected", true);
+  }
 });
 //Create button
 var $button = $("<button>GO</button>");
@@ -27,4 +31,3 @@ $button.click(function() {
 });
 //Modify CSS to hide links on small widths and show button and select
   //Also hides select and button on larger width and show's links
-//Deal with selected options depending on current page.
